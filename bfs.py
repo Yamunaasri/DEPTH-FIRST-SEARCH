@@ -34,7 +34,9 @@ def bfs(graph,start,visited,path):
 graph = defaultdict(list)
 v,e = map(int,input().split())
 for i in range(e):
-    #TYOE UR CODE HERE
+    u,v = map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
 
 start = '0'
 path = []

@@ -24,7 +24,11 @@ def bfs(graph,start,visited,path):
     visited[start] = True
     while len(queue) != 0:
         tmpnode = queue.popleft()
-        #TYPE UR CODE HERE
+        for neighbour in graph[tmpnode]:
+            if visited[neighbour] == False:
+                path.append(neighbour)
+                queue.append(neighbour)
+                visited[neighbour] = True
     return path
 
 graph = defaultdict(list)
